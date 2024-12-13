@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-white dark:bg-gray-900;
+  }
+
+  h1 {
+    @apply text-4xl leading-tight font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply rounded-lg border border-transparent px-4 py-2 text-base font-medium 
+           cursor-pointer transition-colors duration-200 
+           bg-gray-100 dark:bg-gray-800 
+           hover:border-primary-500 
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white 
+           hover:bg-primary-700 
+           dark:bg-primary-700 dark:hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-200 text-secondary-800 
+           hover:bg-secondary-300 
+           dark:bg-secondary-700 dark:text-secondary-100;
+  }
+
+  .card {
+    @apply p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md;
+  }
+
+  .input-field {
+    @apply block w-full rounded-md border-gray-300 shadow-sm 
+           focus:border-primary-500 focus:ring-primary-500 
+           dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  }
+
+  .link {
+    @apply font-medium text-primary-600 hover:text-primary-700 
+           dark:text-primary-400 dark:hover:text-primary-300 
+           transition-colors duration-200;
+  }
+}
+
+#app {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Soporte para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    @apply text-gray-100 bg-gray-900;
+  }
+}
+
+/* Soporte para modo claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    @apply text-gray-900 bg-white;
+  }
+}
